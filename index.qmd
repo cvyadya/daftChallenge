@@ -106,6 +106,30 @@ Your task is to recreate these three historical DAGs using DAFT, making them vis
 # Your code here - recreate the DAG from the reference image
 # Use DAFT to create nodes and edges that match the visual structure
 # Customize colors and styling to make it professional
+import daft
+import matplotlib.pyplot as plt
+
+# Create a PGM object
+pgm = daft.PGM(dpi=150, alternate_style="outer")
+
+# Example of a professionally styled node
+pgm.add_node("Lemons", "Lemons", 1, 1, aspect = 3, scale = 1.1,
+             plot_params={
+                 'facecolor': 'lightgreen', 
+                 'edgecolor': 'darkgreen', 
+                 'linewidth': 2,
+                 'alpha': 0.8,
+             })
+pgm.add_node("Scurvy", "Scurvy", 3.25, 1, aspect = 3, scale = 1.1,
+             plot_params={
+                 'facecolor': 'thistle', 
+                 'edgecolor': 'purple', 
+                 'linewidth': 2,
+                 'alpha': 0.8,
+             })
+pgm.add_edge("Lemons", "Scurvy")
+
+pgm.render()
 ```
 
 ### DAG 2: The Misguided Belief (Wrong Understanding)
@@ -127,6 +151,38 @@ Your task is to recreate these three historical DAGs using DAFT, making them vis
 # Your code here - recreate the DAG from the reference image
 # This DAG should show the incorrect causal chain
 # Use different colors or styling to indicate this is the wrong understanding
+import daft
+import matplotlib.pyplot as plt
+
+# Create a PGM object
+pgm = daft.PGM(dpi=150, alternate_style="outer")
+
+# Example of a professionally styled node
+pgm.add_node("acid", "Acid", 1, 1, aspect = 3, scale = 1.1,
+             plot_params={
+                 'facecolor': 'lightgreen', 
+                 'edgecolor': 'darkgreen', 
+                 'linewidth': 2,
+                 'alpha': 0.8,
+             })
+pgm.add_node("bd", "Bacteria Death", 3.25, 1, aspect = 3, scale = 1.1,
+             plot_params={
+                 'facecolor': 'thistle', 
+                 'edgecolor': 'purple', 
+                 'linewidth': 2,
+                 'alpha': 0.8,
+             })
+pgm.add_node("scurvy", "Scurvy", 5.5, 1, aspect = 3, scale = 1.1,
+             plot_params={
+              'facecolor': 'lightblue', 
+              'edgecolor': 'darkblue', 
+              'linewidth': 2,
+              'alpha': 0.8,
+            })
+pgm.add_edge("acid", "bd")
+pgm.add_edge("bd", "scurvy")
+
+pgm.render()
 ```
 
 ### DAG 3: The 1928 Understanding (Complete and Correct)
@@ -148,6 +204,38 @@ Your task is to recreate these three historical DAGs using DAFT, making them vis
 # Your code here - recreate the DAG from the reference image
 # This should be the most complete and accurate representation
 # Use professional styling that would be suitable for a scientific publication
+import daft
+import matplotlib.pyplot as plt
+
+# Create a PGM object
+pgm = daft.PGM(dpi=150, alternate_style="outer")
+
+# Example of a professionally styled node
+pgm.add_node("vitaminc", "Vitamin C", 1, 1, aspect = 3, scale = 1.1,
+             plot_params={
+                 'facecolor': 'lightgreen', 
+                 'edgecolor': 'darkgreen', 
+                 'linewidth': 2,
+                 'alpha': 0.8,
+             })
+pgm.add_node("collagen", "Collagen Synthesis", 3.25, 1, aspect = 3, scale = 1.1,
+             plot_params={
+                 'facecolor': 'thistle', 
+                 'edgecolor': 'purple', 
+                 'linewidth': 2,
+                 'alpha': 0.8,
+             })
+pgm.add_node("scurvy", "Scurvy", 5.5, 1, aspect = 3, scale = 1.1,
+             plot_params={
+              'facecolor': 'lightblue', 
+              'edgecolor': 'darkblue', 
+              'linewidth': 2,
+              'alpha': 0.8,
+            })
+pgm.add_edge("vitaminc", "collagen")
+pgm.add_edge("collagen", "scurvy")
+
+pgm.render()
 ```
 
 ## Student Requirements Section: Mastering DAFT Visualization {#student-analysis-section}
